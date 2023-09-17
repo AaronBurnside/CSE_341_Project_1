@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/AaronBurnside/CSE_341_Project_1/issues"
   },
-  "homepage": "https://github.com/AaronBurnside/CSE_341_Project_1#readme"
+  "homepage": "https://github.com/AaronBurnside/CSE_341_Project_1#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
