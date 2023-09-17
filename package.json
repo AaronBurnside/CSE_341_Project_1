@@ -12,6 +12,7 @@
   },
   "author": "Aaron Burnside",
   "license": "ISC",
+  "engines": {"node": "v18.17.1"},
   "bugs": {
     "url": "https://github.com/AaronBurnside/CSE_341_Project_1/issues"
   },
