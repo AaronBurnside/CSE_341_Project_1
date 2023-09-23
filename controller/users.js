@@ -18,7 +18,53 @@ const getSingle = async (req, res) => {
     });
 }; 
 
+const createUser = async(req, res) => {
+    //const userId = new ObjectId(req.parmas.id);
+    const user = {
+        First_name: req.body.First_name,
+        Last_name: req.body.Last_name,
+        Email: req.body.Email,
+        Favorite_color: req.body.Favorite_color,
+        Birthday: req.body.Birthday
+    };
+    const response = await mongodb.getDatabase().db().collection('users').insertOne(user);
+    if (response.acknowledged){
+        res.status(204).send();
+    } else {
+        res.status(500).json(response.error || 'Some error occured while creating contact');
+    }
+};
+const updateUser = async(req, res) => {
+    const userId = new ObjectId(req.params.id);
+    const user = {
+        First_name: req.body.First_name,
+        Last_name: req.body.Last_name,
+        Email: req.body.Email,
+        Favorite_color: req.body.Favorite_color,
+        Birthday: req.body.Birthday
+    };
+    const response = await mongodb.getDatabase().db().collection('users').replaceOne({_id: userId}, user);
+    if (response.modifiedCount > 0 ){
+        res.status(204).send();
+    } else {
+        res.status(500).json(response.error || 'Some error occured while updating contact');
+    }
+};
+
+const deleteUser = async (req, res) => {
+    const userId = new ObjectId(req.params.id);
+    const response = await mongodb.getDatabase().db().collection('users').deleteOne({_id: userId});
+    if (response.deleteCount > 0 ){
+        res.status(204).send();
+    } else {
+        res.status(500).json(response.error || 'Some error occured while deleting contact');
+    }
+}
+ 
 module.exports = {
     getAll,
-    getSingle
+    getSingle,
+    createUser,
+    updateUser,
+    deleteUser
 };

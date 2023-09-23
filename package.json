@@ -12,15 +12,22 @@
   },
   "author": "Aaron Burnside",
   "license": "ISC",
-  "engines": {"node": "v18.17.1"},
+  "engines": {
+    "node": "v18.17.1"
+  },
   "bugs": {
     "url": "https://github.com/AaronBurnside/CSE_341_Project_1/issues"
   },
   "homepage": "https://github.com/AaronBurnside/CSE_341_Project_1#readme",
   "dependencies": {
+    "body-parser": "^1.20.2",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "mongodb": "^6.1.0",
-    "mongodg": "^0.1.0"
+    "mongodg": "^0.1.0",
+    "swagger-ui-express": "^5.0.0"
+  },
+  "devDependencies": {
+    "swagger-autogen": "^2.23.6"
   }
 }
