@@ -8,9 +8,9 @@ POST http://localhost:3000/users
 content-type: application/json
 
 {
-    "First_name": "Johnny",
-    "Last_name": "Danger",
-    "Email": "DrDeathDefying@Explosion.com",
+    "First_name": "New Johnny",
+    "Last_name": "New Danger",
+    "Email": "New_DrDeathDefying@Explosion.com",
     "Favorite_color": "Red",
     "Birthday" : "1-1-2000"
 }
@@ -20,9 +20,13 @@ PUT http://localhost:3000/users/650653bfc0e85d4f15dbd48f HTTP/1.1
 content-type: application/json
 
 {
-    "First_name": "BendtJ",
+    "First_name": "Bendt has been Updated",
     "Last_name": "Dahl",
     "Email": "WriteBendt24@gmail.com",
     "Favorite_color": "Green",
     "Birthday" : "5-26-1999"
 }
+
+
+####
+ DELETE  http://localhost:3000/users/650f76dd9eac64049748e39f HTTP/1.1

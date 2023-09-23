@@ -26,8 +26,8 @@ const createUser = async(req, res) => {
         Email: req.body.Email,
         Favorite_color: req.body.Favorite_color,
         Birthday: req.body.Birthday
-    };
-    const response = await mongodb.getDatabase().db().collection('users').insertOne(user);
+        };
+    const response = await mongodb.getDatabase().db().collection('Contacts').insertOne(user);
     if (response.acknowledged){
         res.status(204).send();
     } else {
@@ -43,7 +43,7 @@ const updateUser = async(req, res) => {
         Favorite_color: req.body.Favorite_color,
         Birthday: req.body.Birthday
     };
-    const response = await mongodb.getDatabase().db().collection('users').replaceOne({_id: userId}, user);
+    const response = await mongodb.getDatabase().db().collection('Contacts').replaceOne({_id: userId}, user);
     if (response.modifiedCount > 0 ){
         res.status(204).send();
     } else {
@@ -53,7 +53,7 @@ const updateUser = async(req, res) => {
 
 const deleteUser = async (req, res) => {
     const userId = new ObjectId(req.params.id);
-    const response = await mongodb.getDatabase().db().collection('users').deleteOne({_id: userId});
+    const response = await mongodb.getDatabase().db().collection('Contacts').deleteOne({_id: userId});
     if (response.deleteCount > 0 ){
         res.status(204).send();
     } else {
